@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 
         jasmine: {
             lib: {
-                src: 'lib/**/*.js',
+                src: 'dist/moucolor.js',
                 options: {
                     specs: 'tests/*Spec.js'
                 }

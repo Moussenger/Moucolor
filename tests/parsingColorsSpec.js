@@ -1,27 +1,27 @@
 describe ("Parsing colors", function () {
 
     it("#ffffff is a valid color", function () {
-        expect(Moucolor.parse("#ffffff")).not.toThrow();
+        expect(function() { Moucolor.parse("#ffffff"); }).not.toThrow();
     });
 
     it("#fff is a valid color", function () {
-        expect(Moucolor.parse("#ffffff")).not.toThrow();
+        expect(function() { Moucolor.parse("#ffffff"); }).not.toThrow();
     });
 
     it("#fgfgfg is an incorrect color", function () {
-        expect(Moucolor.parse("#fgfgfg")).toThrow();
+        expect(function() { Moucolor.parse("#fgfgfg"); }).toThrow();
     });
 
     it("#ffff is an incorrect format color", function () {
-        expect(Moucolor.parse("#ffff")).toThrow();
+        expect(function() { Moucolor.parse("#ffff"); }).toThrow();
     });
 
     it("#fffffff is an incorrect format color", function () {
-        expect(Moucolor.parse("#ffffff")).toThrow();
+        expect(function() { Moucolor.parse("#fffffff"); }).toThrow();
     });
 
-    it("fffffff is an incorrect format color", function () {
-        expect(Moucolor.parse("ffffff")).toThrow();
+    it("ffffff is an incorrect format color", function () {
+        expect(function() { Moucolor.parse("ffffff"); }).toThrow();
     });
 
     it("#123456 is correctly parsed", function () {
@@ -37,7 +37,7 @@ describe ("Parsing colors", function () {
     });
 
     it("#abcdef has 239 like decimal blue value", function () {
-        expect(Moucolor.parse("#abcdef").red().dec()).toBe(239);
+        expect(Moucolor.parse("#abcdef").blue().dec()).toBe(239);
     });
 
 });
